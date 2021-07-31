@@ -1,0 +1,31 @@
+body {
+  background: linear-gradient(263deg, #1633be, transparent);
+}
+.container {
+  max-width: 430px;
+}
+.todos li {
+  background-color: #5353e2;
+}
+.input,
+.input:focus {
+  color: black;
+  border: none;
+  background-color: rgb(255 255 255 / 90%);
+  max-width: 430px;
+}
+ul li:hover {
+  width: 410px;
+  height: 55px;
+  background-color: #4040d1;
+}
+.delete {
+  cursor: pointer;
+}
+.filtered {
+  display: none !important;
+}
+.search:hover,
+.input:hover {
+  background-color: #cccccc;
+}
