@@ -15,8 +15,6 @@ body {
   max-width: 430px;
 }
 ul li:hover {
-  width: 410px;
-  height: 55px;
   background-color: #4040d1;
 }
 .delete {
