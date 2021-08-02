@@ -17,7 +17,6 @@ const template = (todo) => {
     '<li class="list-group-item d-flex justify-content-between align-items-center"><i class="far fa-square fa-2x tick" onclick="checkclick(event)"></i><span>' +
     todo +
     '</span><i class="far fa-trash-alt fa-lg delete"></i></li>';
-  console.log(list.innerHTML);
   list.innerHTML += listItem;
 };
 btn.addEventListener("click", (event) => {
@@ -135,8 +134,7 @@ function checkclick(event) {
     event.target.nextElementSibling.classList.add("strike");
     setTimeout(function () {
       event.target.parentElement.classList.add("display");
-    }, 1000);
-    console.log(event.target.parentElement.textContent);
+    }, 500);
     for (let i = 0; i < todos.length; i++) {
       if (todos[i].task == event.target.parentElement.textContent) {
         todos[i].completed = "true";
@@ -149,7 +147,7 @@ function checkclick(event) {
     event.target.classList.add("fa-square");
     setTimeout(function () {
       event.target.parentElement.classList.add("display");
-    }, 1000);
+    }, 500);
     for (let i = 0; i < todos.length; i++) {
       if (todos[i].task == event.target.parentElement.textContent) {
         todos[i].completed = "false";
@@ -157,7 +155,6 @@ function checkclick(event) {
     }
   }
   localStorage.setItem("todolist", JSON.stringify(todos));
-  // console.log(todos);
 }
 // ----------------------------------tobecomplete----------------
 let tobedone = document.querySelector(".tobedone");
@@ -183,9 +180,7 @@ function Cdisplay() {
   var item = document.querySelectorAll("ul li");
   for (var i = 0; i < item.length; i++) {
     if (todos[i].task == item[i].textContent) {
-      // console.log(todos[i].completed);
       if (todos[i].completed == "false") {
-        // console.log(item[i]);
         item[i].classList.add("display");
       } else {
         item[i].classList.remove("display");
